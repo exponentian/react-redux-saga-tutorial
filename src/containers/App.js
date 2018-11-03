@@ -22,7 +22,9 @@ class App extends React.Component {
     const { todos } = this.props;
 
     if (prevProps.todos.requesting !== todos.requesting) {
-      if (!todos.requesting.status) alert(todos.requesting.action);
+      if (!todos.requesting.status && !todos.requesting.action.includes('GET_TODOS') ) {
+        alert(todos.requesting.action);
+      }
     }
   }
 

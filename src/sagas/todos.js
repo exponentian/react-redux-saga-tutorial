@@ -95,10 +95,8 @@ export function* watchUpdateCompledted() {
 
 // update a todo's text
 function* updateTodo(action) {
-  
-  try {
+    try {
     const res = yield call( Api(ROUTE).update, action.data );
-    console.log(res);
     yield delay(500);
     yield put( updateTodoSuccess(res.data) );
 
